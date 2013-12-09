@@ -9,7 +9,7 @@ Public Class FrmAdd
             sConnection.Open()
         End If
 
-        Dim sqlQuery As String = "INSERT INTO lailai(LaiLia_Name,LaiLia_Set,LaiLia_Price,LaiLia_Number,LaiLia_Sum) VALUES ('" & TxtName.Text & _
+        Dim sqlQuery As String = "INSERT INTO lailai(LaiLai_Name,LaiLai_Set,LaiLai_Price,LaiLai_Number,LaiLai_Sum) VALUES ('" & TxtName.Text & _
             "','" & TxtSet.Text & "','" & TxtPrice.Text & "','" & TxtNumber.Text & "','0')"
         Dim sqlCommand As New MySqlCommand
         With sqlCommand

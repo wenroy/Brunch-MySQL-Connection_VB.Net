@@ -22,11 +22,18 @@ Public Class FrmEdit
 
     Private Sub BtnEdit_Click_1(sender As Object, e As EventArgs) Handles BtnEdit.Click
         If sConnection.State = ConnectionState.Closed Then
-            sConnection.ConnectionString = "Server = 127.0.0.1;UserID = brunch;Password = brunch;Database = brunch"
+            sConnection.ConnectionString = "Server = 127.0.0.1;UserID = brunch;Password = brunch;Database = brunch;CharSet=utf8"
             sConnection.Open()
         End If
 
-        Dim xSum As Integer = (TxtPrice.Text) * (TxtNumber.Text)
+        Dim xSum As Integer
+
+        If TxtItem.Text = "" Then TxtItem.Text = "" Else TxtItem.Text = (TxtItem.Text).ToString
+        If TxtName.Text = "" Then TxtName.Text = "" Else TxtName.Text = (TxtName.Text).ToString
+        If TxtSet.Text = "" Then TxtSet.Text = "" Else TxtSet.Text = (TxtSet.Text).ToString
+        If TxtPrice.Text = "" Then TxtPrice.Text = "" Else TxtPrice.Text = Int(TxtPrice.Text)
+        If TxtNumber.Text = "" Then TxtNumber.Text = "" Else TxtNumber.Text = Int(TxtNumber.Text)
+        If TxtPrice.Text = "" Or TxtNumber.Text = "" Then xSum = 0 Else xSum = (TxtPrice.Text) * (TxtNumber.Text)
 
         Dim sqlQuery As String = "UPDATE Storage SET Storage_Item = '" & TxtItem.Text & _
             "',Storage_Name = '" & TxtName.Text & "',Storage_Set = '" & TxtSet.Text & _

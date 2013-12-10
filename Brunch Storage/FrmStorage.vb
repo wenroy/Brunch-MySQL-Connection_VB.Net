@@ -7,7 +7,7 @@ Public Class FrmStorage
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If sConnection.State = ConnectionState.Closed Then
-            sConnection.ConnectionString = "Server = 127.0.0.1;UserID = brunch;Password = brunch;Database = brunch"
+            sConnection.ConnectionString = "Server = 127.0.0.1;UserID = brunch;Password = brunch;Database = brunch;CharSet=utf8"
             sConnection.Open()
         End If
 

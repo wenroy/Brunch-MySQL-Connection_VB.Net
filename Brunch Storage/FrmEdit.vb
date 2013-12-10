@@ -3,20 +3,20 @@
 Public Class FrmEdit
 
     Friend ID As Integer
-    Friend LaiLai_Item As String
-    Friend LaiLai_Name As String
-    Friend LaiLai_Set As String
-    Friend LaiLai_Price As String
-    Friend LaiLai_Number As String
+    Friend Storage_Item As String
+    Friend Storage_Name As String
+    Friend Storage_Set As String
+    Friend Storage_Price As String
+    Friend Storage_Number As String
 
     Public sConnection As New MySqlConnection
     Private Sub FrmEdit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        TxtItem.Text = LaiLai_Item
-        TxtName.Text = LaiLai_Name
-        TxtSet.Text = LaiLai_Set
-        TxtPrice.Text = LaiLai_Price
-        TxtNumber.Text = LaiLai_Number
+        TxtItem.Text = Storage_Item
+        TxtName.Text = Storage_Name
+        TxtSet.Text = Storage_Set
+        TxtPrice.Text = Storage_Price
+        TxtNumber.Text = Storage_Number
 
     End Sub
 
@@ -26,10 +26,12 @@ Public Class FrmEdit
             sConnection.Open()
         End If
 
-        Dim sqlQuery As String = "UPDATE lailai SET LaiLai_Item = '" & TxtItem.Text & _
-            "',LaiLai_Name = '" & TxtName.Text & "',LaiLai_Set = '" & TxtSet.Text & _
-            "',LaiLai_Price = '" & TxtPrice.Text & "',LaiLai_Number = '" & TxtNumber.Text & _
-            "' WHERE ID = '" & ID & "'"
+        Dim xSum As Integer = (TxtPrice.Text) * (TxtNumber.Text)
+
+        Dim sqlQuery As String = "UPDATE Storage SET Storage_Item = '" & TxtItem.Text & _
+            "',Storage_Name = '" & TxtName.Text & "',Storage_Set = '" & TxtSet.Text & _
+            "',Storage_Price = '" & TxtPrice.Text & "',Storage_Number = '" & TxtNumber.Text & _
+            "',Storage_Sum = '" & xSum & "' WHERE Storage_ID = '" & ID & "'"
         Dim sqlCommand As New MySqlCommand
         With sqlCommand
             .CommandText = sqlQuery

@@ -3,7 +3,7 @@
 Public Class FrmStorage
 
     Public sConnection As New MySqlConnection
-    Dim id As Integer
+    Dim Id As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If sConnection.State = ConnectionState.Closed Then
@@ -15,7 +15,7 @@ Public Class FrmStorage
     End Sub
 
     Public Sub LoadStorage()
-        Dim sqlQuery As String = "SELECT * FROM lailai"
+        Dim sqlQuery As String = "SELECT * FROM Storage"
         Dim sqlAdapter As New MySqlDataAdapter
         Dim sqlCommand As New MySqlCommand
         Dim sqlTable As New DataTable
@@ -36,14 +36,14 @@ Public Class FrmStorage
 
         For i = 0 To sqlTable.Rows.Count - 1
             With ListStorage
-                .Items.Add(sqlTable.Rows(i)("ID"))
+                .Items.Add(sqlTable.Rows(i)("Storage_ID"))
                 With .Items(.Items.Count - 1).SubItems
-                    .Add(sqlTable.Rows(i)("LaiLai_Item"))
-                    .Add(sqlTable.Rows(i)("LaiLai_Name"))
-                    .Add(sqlTable.Rows(i)("LaiLai_Set"))
-                    .Add(sqlTable.Rows(i)("LaiLai_Price"))
-                    .Add(sqlTable.Rows(i)("LaiLai_Number"))
-                    .Add(sqlTable.Rows(i)("LaiLai_Sum"))
+                    .Add(sqlTable.Rows(i)("Storage_Item"))
+                    .Add(sqlTable.Rows(i)("Storage_Name"))
+                    .Add(sqlTable.Rows(i)("Storage_Set"))
+                    .Add(sqlTable.Rows(i)("Storage_Price"))
+                    .Add(sqlTable.Rows(i)("Storage_Number"))
+                    .Add(sqlTable.Rows(i)("Storage_Sum"))
                 End With
             End With
         Next
@@ -54,11 +54,11 @@ Public Class FrmStorage
     End Sub
 
     Private Sub BtnEdit_Click(sender As Object, e As EventArgs) Handles BtnEdit.Click
-        If id = Nothing Then
+        If Id = Nothing Then
             MsgBox("請選擇修改項目", MsgBoxStyle.Exclamation)
         Else
-            Dim sqlQuery As String = "SELECT LaiLai_Item,LaiLai_Name,LaiLai_Set,LaiLai_Price,LaiLai_Number FROM lailai" & _
-            " WHERE ID = '" & ListStorage.SelectedItems(0).Text & "'"
+            Dim sqlQuery As String = "SELECT Storage_Item,Storage_Name,Storage_Set,Storage_Price,Storage_Number FROM Storage" & _
+            " WHERE Storage_ID = '" & ListStorage.SelectedItems(0).Text & "'"
 
             Dim sqlAdapter As New MySqlDataAdapter
             Dim sqlCommand As New MySqlCommand
@@ -75,24 +75,24 @@ Public Class FrmStorage
             End With
 
             FrmEdit.ID = ListStorage.SelectedItems(0).Text
-            FrmEdit.LaiLai_Item = sqlTable.Rows(0)("LaiLai_Item")
-            FrmEdit.LaiLai_Name = sqlTable.Rows(0)("LaiLai_Name")
-            FrmEdit.LaiLai_Set = sqlTable.Rows(0)("LaiLai_Set")
-            FrmEdit.LaiLai_Price = sqlTable.Rows(0)("LaiLai_Price")
-            FrmEdit.LaiLai_Number = sqlTable.Rows(0)("LaiLai_Number")
+            FrmEdit.Storage_Item = sqlTable.Rows(0)("Storage_Item")
+            FrmEdit.Storage_Name = sqlTable.Rows(0)("Storage_Name")
+            FrmEdit.Storage_Set = sqlTable.Rows(0)("Storage_Set")
+            FrmEdit.Storage_Price = sqlTable.Rows(0)("Storage_Price")
+            FrmEdit.Storage_Number = sqlTable.Rows(0)("Storage_Number")
             FrmEdit.ShowDialog()
         End If
     End Sub
 
     Private Sub ListStorage_MouseClick(sender As Object, e As MouseEventArgs) Handles ListStorage.MouseClick
-        id = ListStorage.SelectedItems(0).Text
+        Id = ListStorage.SelectedItems(0).Text
     End Sub
 
     Private Sub BtnDel_Click(sender As Object, e As EventArgs) Handles BtnDel.Click
-        If id = Nothing Then
+        If Id = Nothing Then
             MsgBox("請選擇刪除項目", MsgBoxStyle.Exclamation)
         Else
-            Dim sqlQuery As String = "DELETE FROM lailai WHERE ID = '" & id & "'"
+            Dim sqlQuery As String = "DELETE FROM Storage WHERE Storage_ID = '" & Id & "'"
             Dim sqlCommand As New MySqlCommand
 
             With sqlCommand

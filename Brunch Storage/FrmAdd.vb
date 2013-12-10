@@ -9,8 +9,11 @@ Public Class FrmAdd
             sConnection.Open()
         End If
 
-        Dim sqlQuery As String = "INSERT INTO lailai(LaiLai_Item,LaiLai_Name,LaiLai_Set,LaiLai_Price,LaiLai_Number,LaiLai_Sum)" & _
-            " VALUES ('" & TxtItem.Text & "','" & TxtName.Text & "','" & TxtSet.Text & "','" & TxtPrice.Text & "','" & TxtNumber.Text & "','0')"
+        Dim xSum As Integer = (TxtPrice.Text) * (TxtNumber.Text)
+
+        Dim sqlQuery As String = "INSERT INTO Storage(Storage_Item,Storage_Name,Storage_Set,Storage_Price,Storage_Number,Storage_Sum)" & _
+            " VALUES ('" & TxtItem.Text & "','" & TxtName.Text & "','" & TxtSet.Text & "','" & TxtPrice.Text & "','" & TxtNumber.Text & _
+            "','" & xSum & "')"
         Dim sqlCommand As New MySqlCommand
         With sqlCommand
             .CommandText = sqlQuery

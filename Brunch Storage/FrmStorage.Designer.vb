@@ -32,16 +32,17 @@ Partial Class FrmStorage
         Me.BtnAdd = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.BtnDel = New System.Windows.Forms.Button()
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'ListStorage
         '
-        Me.ListStorage.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.ListStorage.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader7, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.ListStorage.FullRowSelect = True
         Me.ListStorage.GridLines = True
         Me.ListStorage.Location = New System.Drawing.Point(12, 12)
         Me.ListStorage.Name = "ListStorage"
-        Me.ListStorage.Size = New System.Drawing.Size(535, 340)
+        Me.ListStorage.Size = New System.Drawing.Size(630, 350)
         Me.ListStorage.TabIndex = 0
         Me.ListStorage.UseCompatibleStateImageBehavior = False
         Me.ListStorage.View = System.Windows.Forms.View.Details
@@ -77,7 +78,7 @@ Partial Class FrmStorage
         '
         'BtnAdd
         '
-        Me.BtnAdd.Location = New System.Drawing.Point(552, 41)
+        Me.BtnAdd.Location = New System.Drawing.Point(670, 50)
         Me.BtnAdd.Name = "BtnAdd"
         Me.BtnAdd.Size = New System.Drawing.Size(75, 23)
         Me.BtnAdd.TabIndex = 1
@@ -86,7 +87,7 @@ Partial Class FrmStorage
         '
         'BtnEdit
         '
-        Me.BtnEdit.Location = New System.Drawing.Point(552, 81)
+        Me.BtnEdit.Location = New System.Drawing.Point(670, 100)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(75, 23)
         Me.BtnEdit.TabIndex = 2
@@ -95,18 +96,23 @@ Partial Class FrmStorage
         '
         'BtnDel
         '
-        Me.BtnDel.Location = New System.Drawing.Point(552, 122)
+        Me.BtnDel.Location = New System.Drawing.Point(670, 150)
         Me.BtnDel.Name = "BtnDel"
         Me.BtnDel.Size = New System.Drawing.Size(75, 23)
         Me.BtnDel.TabIndex = 3
         Me.BtnDel.Text = "刪除"
         Me.BtnDel.UseVisualStyleBackColor = True
         '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "貨號"
+        Me.ColumnHeader7.Width = 94
+        '
         'FrmStorage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(644, 362)
+        Me.ClientSize = New System.Drawing.Size(764, 362)
         Me.Controls.Add(Me.BtnDel)
         Me.Controls.Add(Me.BtnEdit)
         Me.Controls.Add(Me.BtnAdd)
@@ -126,5 +132,6 @@ Partial Class FrmStorage
     Friend WithEvents BtnAdd As System.Windows.Forms.Button
     Friend WithEvents BtnEdit As System.Windows.Forms.Button
     Friend WithEvents BtnDel As System.Windows.Forms.Button
+    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
 
 End Class

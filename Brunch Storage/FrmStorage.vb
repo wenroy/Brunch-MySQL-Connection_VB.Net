@@ -38,6 +38,7 @@ Public Class FrmStorage
             With ListStorage
                 .Items.Add(sqlTable.Rows(i)("ID"))
                 With .Items(.Items.Count - 1).SubItems
+                    .Add(sqlTable.Rows(i)("LaiLai_Item"))
                     .Add(sqlTable.Rows(i)("LaiLai_Name"))
                     .Add(sqlTable.Rows(i)("LaiLai_Set"))
                     .Add(sqlTable.Rows(i)("LaiLai_Price"))
@@ -56,7 +57,7 @@ Public Class FrmStorage
         If id = Nothing Then
             MsgBox("請選擇修改項目", MsgBoxStyle.Exclamation)
         Else
-            Dim sqlQuery As String = "SELECT LaiLai_Name,LaiLai_Set,LaiLai_Price,LaiLai_Number FROM lailai" & _
+            Dim sqlQuery As String = "SELECT LaiLai_Item,LaiLai_Name,LaiLai_Set,LaiLai_Price,LaiLai_Number FROM lailai" & _
             " WHERE ID = '" & ListStorage.SelectedItems(0).Text & "'"
 
             Dim sqlAdapter As New MySqlDataAdapter
@@ -74,10 +75,11 @@ Public Class FrmStorage
             End With
 
             FrmEdit.ID = ListStorage.SelectedItems(0).Text
-            FrmEdit.LaiLia_Name = sqlTable.Rows(0)("LaiLai_Name")
-            FrmEdit.LaiLia_Set = sqlTable.Rows(0)("LaiLai_Set")
-            FrmEdit.LaiLia_Price = sqlTable.Rows(0)("LaiLai_Price")
-            FrmEdit.LaiLia_Number = sqlTable.Rows(0)("LaiLai_Number")
+            FrmEdit.LaiLai_Item = sqlTable.Rows(0)("LaiLai_Item")
+            FrmEdit.LaiLai_Name = sqlTable.Rows(0)("LaiLai_Name")
+            FrmEdit.LaiLai_Set = sqlTable.Rows(0)("LaiLai_Set")
+            FrmEdit.LaiLai_Price = sqlTable.Rows(0)("LaiLai_Price")
+            FrmEdit.LaiLai_Number = sqlTable.Rows(0)("LaiLai_Number")
             FrmEdit.ShowDialog()
         End If
     End Sub

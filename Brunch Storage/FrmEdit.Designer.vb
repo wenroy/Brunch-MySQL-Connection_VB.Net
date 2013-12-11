@@ -149,6 +149,7 @@ Partial Class FrmEdit
         Me.CmbCompany.Name = "CmbCompany"
         Me.CmbCompany.Size = New System.Drawing.Size(121, 20)
         Me.CmbCompany.TabIndex = 27
+        Me.CmbCompany.TabStop = False
         '
         'FrmEdit
         '

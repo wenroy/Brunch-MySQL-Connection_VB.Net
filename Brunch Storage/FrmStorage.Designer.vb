@@ -43,7 +43,7 @@ Partial Class FrmStorage
         Me.ListStorage.GridLines = True
         Me.ListStorage.Location = New System.Drawing.Point(12, 12)
         Me.ListStorage.Name = "ListStorage"
-        Me.ListStorage.Size = New System.Drawing.Size(720, 350)
+        Me.ListStorage.Size = New System.Drawing.Size(740, 600)
         Me.ListStorage.TabIndex = 0
         Me.ListStorage.UseCompatibleStateImageBehavior = False
         Me.ListStorage.View = System.Windows.Forms.View.Details
@@ -84,7 +84,7 @@ Partial Class FrmStorage
         '
         'BtnAdd
         '
-        Me.BtnAdd.Location = New System.Drawing.Point(750, 50)
+        Me.BtnAdd.Location = New System.Drawing.Point(780, 50)
         Me.BtnAdd.Name = "BtnAdd"
         Me.BtnAdd.Size = New System.Drawing.Size(75, 23)
         Me.BtnAdd.TabIndex = 1
@@ -93,7 +93,7 @@ Partial Class FrmStorage
         '
         'BtnEdit
         '
-        Me.BtnEdit.Location = New System.Drawing.Point(750, 100)
+        Me.BtnEdit.Location = New System.Drawing.Point(780, 100)
         Me.BtnEdit.Name = "BtnEdit"
         Me.BtnEdit.Size = New System.Drawing.Size(75, 23)
         Me.BtnEdit.TabIndex = 2
@@ -102,7 +102,7 @@ Partial Class FrmStorage
         '
         'BtnDel
         '
-        Me.BtnDel.Location = New System.Drawing.Point(750, 150)
+        Me.BtnDel.Location = New System.Drawing.Point(780, 150)
         Me.BtnDel.Name = "BtnDel"
         Me.BtnDel.Size = New System.Drawing.Size(75, 23)
         Me.BtnDel.TabIndex = 3
@@ -118,7 +118,7 @@ Partial Class FrmStorage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(844, 372)
+        Me.ClientSize = New System.Drawing.Size(884, 622)
         Me.Controls.Add(Me.BtnDel)
         Me.Controls.Add(Me.BtnEdit)
         Me.Controls.Add(Me.BtnAdd)

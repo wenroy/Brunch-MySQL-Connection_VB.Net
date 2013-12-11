@@ -24,6 +24,7 @@ Partial Class FrmStorage
     Private Sub InitializeComponent()
         Me.ListStorage = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -33,7 +34,9 @@ Partial Class FrmStorage
         Me.BtnAdd = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.BtnDel = New System.Windows.Forms.Button()
-        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtCount = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ListStorage
@@ -51,6 +54,11 @@ Partial Class FrmStorage
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "ID"
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "廠商"
+        Me.ColumnHeader8.Width = 88
         '
         'ColumnHeader7
         '
@@ -109,16 +117,40 @@ Partial Class FrmStorage
         Me.BtnDel.Text = "刪除"
         Me.BtnDel.UseVisualStyleBackColor = True
         '
-        'ColumnHeader8
+        'Label1
         '
-        Me.ColumnHeader8.Text = "廠商"
-        Me.ColumnHeader8.Width = 88
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(773, 243)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 12)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "總共："
+        '
+        'TxtCount
+        '
+        Me.TxtCount.Location = New System.Drawing.Point(820, 233)
+        Me.TxtCount.Name = "TxtCount"
+        Me.TxtCount.Size = New System.Drawing.Size(29, 22)
+        Me.TxtCount.TabIndex = 5
+        Me.TxtCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(855, 243)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(17, 12)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "筆"
         '
         'FrmStorage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(884, 622)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtCount)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnDel)
         Me.Controls.Add(Me.BtnEdit)
         Me.Controls.Add(Me.BtnAdd)
@@ -126,6 +158,7 @@ Partial Class FrmStorage
         Me.Name = "FrmStorage"
         Me.Text = "Brunch Storage List"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ListStorage As System.Windows.Forms.ListView
@@ -140,5 +173,8 @@ Partial Class FrmStorage
     Friend WithEvents BtnDel As System.Windows.Forms.Button
     Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents TxtCount As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 
 End Class

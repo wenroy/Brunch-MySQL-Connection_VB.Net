@@ -6,15 +6,18 @@ Public Class FrmStorage
     Dim Id As Integer
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If sConnection.State = ConnectionState.Closed Then
             sConnection.ConnectionString = "Server = 127.0.0.1;UserID = brunch;Password = brunch;Database = brunch;CharSet=utf8"
             sConnection.Open()
         End If
 
         LoadStorage()
+
     End Sub
 
     Public Sub LoadStorage()
+
         Dim sqlQuery As String = "SELECT * FROM Storage"
         Dim sqlAdapter As New MySqlDataAdapter
         Dim sqlCommand As New MySqlCommand
@@ -48,6 +51,10 @@ Public Class FrmStorage
                 End With
             End With
         Next
+
+        'Show Database Count
+        TxtCount.Text = sqlTable.Rows.Count
+
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
@@ -108,4 +115,5 @@ Public Class FrmStorage
             LoadStorage()
         End If
     End Sub
+
 End Class

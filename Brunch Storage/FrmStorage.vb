@@ -38,6 +38,7 @@ Public Class FrmStorage
             With ListStorage
                 .Items.Add(sqlTable.Rows(i)("Storage_ID"))
                 With .Items(.Items.Count - 1).SubItems
+                    .Add(sqlTable.Rows(i)("Storage_Company"))
                     .Add(sqlTable.Rows(i)("Storage_Item"))
                     .Add(sqlTable.Rows(i)("Storage_Name"))
                     .Add(sqlTable.Rows(i)("Storage_Set"))
@@ -57,8 +58,8 @@ Public Class FrmStorage
         If Id = Nothing Then
             MsgBox("請選擇修改項目", MsgBoxStyle.Exclamation)
         Else
-            Dim sqlQuery As String = "SELECT Storage_Item,Storage_Name,Storage_Set,Storage_Price,Storage_Number FROM Storage" & _
-            " WHERE Storage_ID = '" & ListStorage.SelectedItems(0).Text & "'"
+            Dim sqlQuery As String = "SELECT Storage_Company,Storage_Item,Storage_Name,Storage_Set,Storage_Price," & _
+                "Storage_Number FROM Storage WHERE Storage_ID = '" & ListStorage.SelectedItems(0).Text & "'"
 
             Dim sqlAdapter As New MySqlDataAdapter
             Dim sqlCommand As New MySqlCommand
@@ -75,6 +76,7 @@ Public Class FrmStorage
             End With
 
             FrmEdit.ID = ListStorage.SelectedItems(0).Text
+            FrmEdit.Storage_Company = sqlTable.Rows(0)("Storage_Company")
             FrmEdit.Storage_Item = sqlTable.Rows(0)("Storage_Item")
             FrmEdit.Storage_Name = sqlTable.Rows(0)("Storage_Name")
             FrmEdit.Storage_Set = sqlTable.Rows(0)("Storage_Set")

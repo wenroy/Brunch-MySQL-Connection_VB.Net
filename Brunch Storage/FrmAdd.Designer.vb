@@ -33,12 +33,14 @@ Partial Class FrmAdd
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.TxtItem = New System.Windows.Forms.TextBox()
         Me.LblItem = New System.Windows.Forms.Label()
+        Me.LblCompany = New System.Windows.Forms.Label()
+        Me.CmbCompany = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'LblName
         '
         Me.LblName.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.LblName.Location = New System.Drawing.Point(30, 70)
+        Me.LblName.Location = New System.Drawing.Point(40, 100)
         Me.LblName.Name = "LblName"
         Me.LblName.Size = New System.Drawing.Size(60, 25)
         Me.LblName.TabIndex = 0
@@ -48,7 +50,7 @@ Partial Class FrmAdd
         'LblSet
         '
         Me.LblSet.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.LblSet.Location = New System.Drawing.Point(30, 110)
+        Me.LblSet.Location = New System.Drawing.Point(40, 140)
         Me.LblSet.Name = "LblSet"
         Me.LblSet.Size = New System.Drawing.Size(60, 25)
         Me.LblSet.TabIndex = 1
@@ -58,7 +60,7 @@ Partial Class FrmAdd
         'LblPrice
         '
         Me.LblPrice.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.LblPrice.Location = New System.Drawing.Point(30, 150)
+        Me.LblPrice.Location = New System.Drawing.Point(40, 180)
         Me.LblPrice.Name = "LblPrice"
         Me.LblPrice.Size = New System.Drawing.Size(60, 25)
         Me.LblPrice.TabIndex = 2
@@ -68,7 +70,7 @@ Partial Class FrmAdd
         'LblNumber
         '
         Me.LblNumber.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.LblNumber.Location = New System.Drawing.Point(30, 190)
+        Me.LblNumber.Location = New System.Drawing.Point(40, 220)
         Me.LblNumber.Name = "LblNumber"
         Me.LblNumber.Size = New System.Drawing.Size(60, 25)
         Me.LblNumber.TabIndex = 3
@@ -77,35 +79,35 @@ Partial Class FrmAdd
         '
         'TxtName
         '
-        Me.TxtName.Location = New System.Drawing.Point(100, 70)
+        Me.TxtName.Location = New System.Drawing.Point(100, 100)
         Me.TxtName.Name = "TxtName"
         Me.TxtName.Size = New System.Drawing.Size(100, 22)
         Me.TxtName.TabIndex = 5
         '
         'TxtSet
         '
-        Me.TxtSet.Location = New System.Drawing.Point(100, 110)
+        Me.TxtSet.Location = New System.Drawing.Point(100, 140)
         Me.TxtSet.Name = "TxtSet"
         Me.TxtSet.Size = New System.Drawing.Size(100, 22)
         Me.TxtSet.TabIndex = 6
         '
         'TxtPrice
         '
-        Me.TxtPrice.Location = New System.Drawing.Point(100, 150)
+        Me.TxtPrice.Location = New System.Drawing.Point(100, 180)
         Me.TxtPrice.Name = "TxtPrice"
         Me.TxtPrice.Size = New System.Drawing.Size(100, 22)
         Me.TxtPrice.TabIndex = 7
         '
         'TxtNumber
         '
-        Me.TxtNumber.Location = New System.Drawing.Point(100, 190)
+        Me.TxtNumber.Location = New System.Drawing.Point(100, 220)
         Me.TxtNumber.Name = "TxtNumber"
         Me.TxtNumber.Size = New System.Drawing.Size(100, 22)
         Me.TxtNumber.TabIndex = 8
         '
         'BtnSave
         '
-        Me.BtnSave.Location = New System.Drawing.Point(220, 190)
+        Me.BtnSave.Location = New System.Drawing.Point(230, 220)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(75, 23)
         Me.BtnSave.TabIndex = 10
@@ -114,7 +116,7 @@ Partial Class FrmAdd
         '
         'TxtItem
         '
-        Me.TxtItem.Location = New System.Drawing.Point(100, 30)
+        Me.TxtItem.Location = New System.Drawing.Point(100, 60)
         Me.TxtItem.Name = "TxtItem"
         Me.TxtItem.Size = New System.Drawing.Size(100, 22)
         Me.TxtItem.TabIndex = 12
@@ -122,18 +124,39 @@ Partial Class FrmAdd
         'LblItem
         '
         Me.LblItem.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
-        Me.LblItem.Location = New System.Drawing.Point(30, 30)
+        Me.LblItem.Location = New System.Drawing.Point(40, 60)
         Me.LblItem.Name = "LblItem"
         Me.LblItem.Size = New System.Drawing.Size(60, 25)
         Me.LblItem.TabIndex = 11
         Me.LblItem.Text = "貨號："
         Me.LblItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'LblCompany
+        '
+        Me.LblCompany.Font = New System.Drawing.Font("微軟正黑體", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(136, Byte))
+        Me.LblCompany.Location = New System.Drawing.Point(40, 20)
+        Me.LblCompany.Name = "LblCompany"
+        Me.LblCompany.Size = New System.Drawing.Size(60, 25)
+        Me.LblCompany.TabIndex = 13
+        Me.LblCompany.Text = "廠商："
+        Me.LblCompany.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'CmbCompany
+        '
+        Me.CmbCompany.FormattingEnabled = True
+        Me.CmbCompany.Items.AddRange(New Object() {"", "來來", "福記", "吉得堡", "信昌", "冠玨"})
+        Me.CmbCompany.Location = New System.Drawing.Point(100, 25)
+        Me.CmbCompany.Name = "CmbCompany"
+        Me.CmbCompany.Size = New System.Drawing.Size(121, 20)
+        Me.CmbCompany.TabIndex = 14
+        '
         'FrmAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(324, 242)
+        Me.ClientSize = New System.Drawing.Size(334, 262)
+        Me.Controls.Add(Me.CmbCompany)
+        Me.Controls.Add(Me.LblCompany)
         Me.Controls.Add(Me.TxtItem)
         Me.Controls.Add(Me.LblItem)
         Me.Controls.Add(Me.BtnSave)
@@ -162,4 +185,6 @@ Partial Class FrmAdd
     Friend WithEvents BtnSave As System.Windows.Forms.Button
     Friend WithEvents TxtItem As System.Windows.Forms.TextBox
     Friend WithEvents LblItem As System.Windows.Forms.Label
+    Friend WithEvents LblCompany As System.Windows.Forms.Label
+    Friend WithEvents CmbCompany As System.Windows.Forms.ComboBox
 End Class

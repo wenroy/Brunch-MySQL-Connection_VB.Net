@@ -18,8 +18,9 @@ Public Class FrmAdd
         If TxtNumber.Text = "" Then TxtNumber.Text = "" Else TxtNumber.Text = Int(TxtNumber.Text)
         If TxtPrice.Text = "" Or TxtNumber.Text = "" Then xSum = 0 Else xSum = (TxtPrice.Text) * (TxtNumber.Text)
 
-        Dim sqlQuery As String = "INSERT INTO Storage(Storage_Item,Storage_Name,Storage_Set,Storage_Price,Storage_Number,Storage_Sum)" & _
-            " VALUES ('" & TxtItem.Text & "','" & TxtName.Text & "','" & TxtSet.Text & "','" & TxtPrice.Text & "','" & TxtNumber.Text & _
+        Dim sqlQuery As String = "INSERT INTO Storage(Storage_Company,Storage_Item,Storage_Name,Storage_Set," & _
+            "Storage_Price,Storage_Number,Storage_Sum) VALUES ('" & CmbCompany.Text & "','" & TxtItem.Text & _
+            "','" & TxtName.Text & "','" & TxtSet.Text & "','" & TxtPrice.Text & "','" & TxtNumber.Text & _
             "','" & xSum & "')"
         Dim sqlCommand As New MySqlCommand
         With sqlCommand
@@ -35,4 +36,5 @@ Public Class FrmAdd
         'Load the all the data again from our main form
         FrmStorage.LoadStorage()
     End Sub
+
 End Class
